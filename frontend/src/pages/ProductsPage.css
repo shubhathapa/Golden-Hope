@@ -1,0 +1,25 @@
+.products-page {
+  padding: 40px 20px;
+  background-color: #faf8f5;
+  min-height: 100vh;
+}
+
+.store-title {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 48px;
+  font-family: 'Georgia', serif;
+  color: #8B6914;
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.2),
+    0 0 30px rgba(201,168,76,0.3);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 280px);
+  gap: 48px;
+  justify-content: center;
+}
