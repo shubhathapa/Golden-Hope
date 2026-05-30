@@ -2,20 +2,91 @@ const sequelize = require('./index')
 const Product = require('../models/Product')
 
 const products = [
-  { name: 'Handwoven Lucky Bracelet', description: 'Traditional Chinese red rope bracelet with gold alluvial beads, handwoven for good fortune', price: 9.99, imageUrl: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400', inventoryQty: 50, rating: 4.9 },
-  { name: 'Jade Pendant Necklace', description: 'Natural jade carved pendant on silk cord, traditional Chinese blessing symbol', price: 14.99, imageUrl: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400', inventoryQty: 30, rating: 4.8 },
-  { name: 'Butterfly Hair Pin', description: 'Handmade cloisonné enamel butterfly hairpin, inspired by Tang Dynasty style', price: 11.99, imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400', inventoryQty: 40, rating: 4.7 },
-  { name: 'Cloisonné Earrings', description: 'Traditional cloisonné enamel drop earrings with floral pattern, handcrafted in Beijing', price: 12.99, imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400', inventoryQty: 35, rating: 4.6 },
-  { name: 'Red String Knot Bracelet', description: 'Hand-tied Chinese knot bracelet with jade bead, symbol of prosperity and protection', price: 7.99, imageUrl: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400', inventoryQty: 60, rating: 4.9 },
-  { name: 'Silver Hair Stick', description: 'Sterling silver hair stick with hand-engraved plum blossom, traditional Hanfu accessory', price: 15.99, imageUrl: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400', inventoryQty: 25, rating: 4.8 },
-  { name: 'Silk Tassel Earrings', description: 'Handmade silk tassel earrings with gold copper ring, elegant Chinese folk style', price: 8.99, imageUrl: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400', inventoryQty: 45, rating: 4.7 },
-  { name: 'Peony Enamel Ring', description: 'Hand-painted peony enamel ring in vintage copper setting, Chinese floral art', price: 13.99, imageUrl: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400', inventoryQty: 20, rating: 4.6 },
-  { name: 'Bamboo Jade Bangle', description: 'Carved natural jade bangle with bamboo pattern, symbol of strength and resilience', price: 19.99, imageUrl: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400', inventoryQty: 15, rating: 4.8 },
-  { name: 'Phoenix Hair Crown', description: 'Handcrafted phoenix hair crown with filigree metalwork, inspired by Ming Dynasty style', price: 24.99, imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400', inventoryQty: 10, rating: 4.9 },
+  { 
+    name: 'Chinese Pearl Lily Hair Stick', 
+    description: 'Delicate hairpin adorned with pearl lily blossoms and flowing tassels. A timeless piece that pairs beautifully with hanfu, qipao, or any modern oriental look.', 
+    price: 9.99, 
+    imageUrl: '/images/Chinese-Pearl-Lily-Hair-Stick.jpg', 
+    inventoryQty: 50, 
+    rating: 4.9 
+  },
+  { 
+    name: 'Blue Blossom Tassel Hair Clip', 
+    description: 'A charming blue floral clip with soft dangling tassels, drawing inspiration from modern Chinese fashion. Ideal for festivals, vacations, and everyday elegance.', 
+    price: 8.99, 
+    imageUrl: '/images/Blue-Blossom-Tassel-Hair-Clip.jpg', 
+    inventoryQty: 45, 
+    rating: 4.7 
+  },
+  { 
+    name: 'Jade Dream Chinese Earrings', 
+    description: 'Graceful earrings rooted in classical oriental design. Their subtle jade tones and refined silhouette make them a natural match for hanfu and new-Chinese fashion.', 
+    price: 11.99, 
+    imageUrl: '/images/Jade-Dream-Chinese-Earrings.jpg', 
+    inventoryQty: 40, 
+    rating: 4.8 
+  },
+  { 
+    name: 'Elegant Chinese Cloisonné Bangle', 
+    description: 'Handcrafted cloisonné bangle with intricate floral patterns inspired by imperial palace art. A stunning gift choice for weddings, hanfu, or qipao occasions.', 
+    price: 19.99, 
+    imageUrl: '/images/Elegant-Chinese-Cloisonne-Bangle.jpg', 
+    inventoryQty: 25, 
+    rating: 4.9 
+  },
+  { 
+    name: 'Vintage Chinese Lace Choker', 
+    description: 'A romantic lace choker with a retro Chinese twist. Its delicate texture and close-fitting silhouette add a touch of vintage charm to qipao and modern outfits alike.', 
+    price: 12.99, 
+    imageUrl: '/images/Vintage-Chinese-Lace-Choker.jpg', 
+    inventoryQty: 35, 
+    rating: 4.6 
+  },
+  { 
+    name: 'Butterfly Meadow Beaded Bracelet', 
+    description: 'A softly layered beaded bracelet with a vintage oriental feel. Light and versatile, it complements both casual hanfu styling and everyday outfits effortlessly.', 
+    price: 7.99, 
+    imageUrl: '/images/Butterfly-Meadow-Beaded-Bracelet.jpg', 
+    inventoryQty: 60, 
+    rating: 4.7 
+  },
+  { 
+    name: 'Oriental Cloud Ring & Necklace Set', 
+    description: 'A coordinated jewelry set inspired by ancient cloud motifs and jade culture. Each piece carries a sense of myth and elegance, perfect for hanfu and qipao styling.', 
+    price: 14.99, 
+    imageUrl: '/images/Oriental-Cloud-Ring-Necklace-Set.jpg', 
+    inventoryQty: 20, 
+    rating: 4.8 
+  },
+  { 
+    name: 'Vintage Jade Tassel Earrings', 
+    description: 'Statement earrings combining jade-inspired stones, colorful enamel, and graceful tassels. A bold yet refined choice for vintage oriental and hanfu fashion lovers.', 
+    price: 13.99, 
+    imageUrl: '/images/Vintage-Jade-Tassel-Earrings.jpg', 
+    inventoryQty: 30, 
+    rating: 4.6 
+  },
+  { 
+    name: 'Vintage Tassel Hair Claw Clip', 
+    description: 'A practical yet stylish hair claw clip dressed up with flowing tassels and Chinese-inspired details. Comfortable enough for daily wear, elegant enough for special occasions.', 
+    price: 10.99, 
+    imageUrl: '/images/Vintage-Tassel-Hair-Claw-Clip.jpg', 
+    inventoryQty: 40, 
+    rating: 4.8 
+  },
+  { 
+    name: 'Luo Yue Pearl Pendant Necklace', 
+    description: 'A graceful pearl pendant necklace echoing the romantic aesthetics of the Tang dynasty. Pairs effortlessly with hanfu, qipao, or any outfit calling for a touch of poetic elegance.', 
+    price: 15.99, 
+    imageUrl: '/images/Luo-Yue-Pearl-Pendant-Necklace.jpg', 
+    inventoryQty: 25, 
+    rating: 4.9 
+  },
 ]
 
 async function seed() {
   await sequelize.sync({ alter: true })
+  await Product.destroy({ where: {} }) 
   await Product.bulkCreate(products)
   console.log('✅ Seeded 10 products!')
   process.exit(0)
