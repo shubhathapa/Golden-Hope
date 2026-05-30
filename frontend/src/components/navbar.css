@@ -1,0 +1,220 @@
+/* ── Navbar.css — Golden Hope Navbar Styles ─────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap');
+
+/* ── Variables ────────────────────────────────────────────────────────────── */
+:root {
+  --gold:       #c9a84c;
+  --green:      #2d4a2d;
+  --cream:      #f5f0e8;
+  --cream-dark: #ede8dc;
+  --red:        #a05252;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+.navbar {
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-inner {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Logo ─────────────────────────────────────────────────────────────────── */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.navbar-logo-star {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+/* ── Desktop nav links ────────────────────────────────────────────────────── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar-link {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--gold);
+  transition: color 0.2s;
+}
+
+.navbar-link:hover {
+  color: var(--green);
+}
+
+/* ── Icon buttons ─────────────────────────────────────────────────────────── */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--green);
+  padding: 6px;
+  line-height: 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.navbar-icon-btn:hover {
+  color: var(--gold);
+}
+
+/* ── Cart badge ───────────────────────────────────────────────────────────── */
+.navbar-cart {
+  position: relative;
+}
+
+.navbar-cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: var(--gold);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── User dropdown ────────────────────────────────────────────────────────── */
+.navbar-user {
+  position: relative;
+}
+
+.navbar-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background-color: var(--cream);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  min-width: 160px;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: var(--green);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: background 0.15s;
+}
+
+.navbar-dropdown-item:hover {
+  background-color: var(--cream-dark);
+}
+
+.navbar-dropdown-divider {
+  border-top: 1px solid var(--gold);
+  margin: 4px 0;
+}
+
+.navbar-dropdown-logout {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: var(--red);
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.15s;
+}
+
+.navbar-dropdown-logout:hover {
+  background-color: var(--cream-dark);
+}
+
+/* ── Gold divider ─────────────────────────────────────────────────────────── */
+.navbar-divider {
+  height: 2px;
+  background-color: var(--gold);
+  opacity: 0.4;
+}
+
+/* ── Mobile hamburger ─────────────────────────────────────────────────────── */
+.navbar-hamburger {
+  display: none;
+}
+
+/* ── Mobile menu ──────────────────────────────────────────────────────────── */
+.navbar-mobile-menu {
+  background-color: var(--cream);
+  padding: 16px 24px 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-mobile-link {
+  display: block;
+  padding: 10px 0;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  transition: color 0.2s;
+}
+
+.navbar-mobile-link:hover {
+  color: var(--green);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: inline-flex;
+  }
+}
