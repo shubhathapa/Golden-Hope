@@ -10,7 +10,9 @@ app.use(cors({
 }))
 app.use(express.json())
 
+const cartRoutes = require('./routes/cart') 
 app.use('/api/products', productRoutes)
+app.use('/api/cart', cartRoutes)  
 
 const PORT = process.env.PORT || 3000
 
