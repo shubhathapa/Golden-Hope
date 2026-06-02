@@ -3,20 +3,22 @@ import Order from "../models/Order.js";
 
 const router = express.Router();
 
+console.log("orderRoutes loaded");
+
 // 🧪 TEST ROUTE (temporary)
 router.get("/test", async (req, res) => {
   try {
-    console.log("TEST ORDER ROUTE HIT");
+  console.log("TEST ORDER ROUTE HIT");
 
     const order = await Order.create({
       userId: "test123",
-      products: [
-        {
-          productId: "abc",
-          quantity: 1,
+     products: [
+       {
+        productId: "abc",
+        quantity: 1,
         },
       ],
-      totalPrice: 100,
+    totalPrice: 100,
     });
 
     console.log("ORDER CREATED:", order);
