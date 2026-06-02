@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
 import './ProductsPage.css'
+import { Link } from 'react-router-dom'
 
 function ProductsPage() {
   const [products, setProducts] = useState([])
@@ -25,6 +26,12 @@ function ProductsPage() {
     <div className="products-page">
       <h1 className="store-title">✦ GOLDEN HOPE ✦</h1>
       <div className="products-grid">
+
+
+        <Link to="/checkout">
+        <button>Go To Checkout</button>
+        </Link>
+
         {products.map(p => (
           <ProductCard key={p.id} product={p} />
         ))}
