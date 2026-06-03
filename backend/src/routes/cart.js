@@ -6,7 +6,8 @@ const Product = require('../models/Product')
 // GET /api/cart
 router.get('/', async (req, res) => {
   try {
-    const items = await CartItem.findAll({ include: Product, 
+    const items = await CartItem.findAll({ 
+        include: Product, 
         order: [['createdAt', 'ASC']]
     })
     res.json(items)
