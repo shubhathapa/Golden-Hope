@@ -8,7 +8,7 @@ function ProductsPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products')
+    fetch('https://golden-hope.onrender.com/api/products')
       .then(res => res.json())
       .then(data => {
         console.log(data)

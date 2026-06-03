@@ -9,13 +9,13 @@ export default function Cart() {
   }, []);
 
   async function fetchCart() {
-    const res = await fetch('http://localhost:3000/api/cart');
+    const res = await fetch('https://golden-hope.onrender.com/api/cart');
     const data = await res.json();
     setCartItems(data);
   }
 
   async function increaseQty(item) {
-    await fetch('http://localhost:3000/api/cart', {
+    await fetch('https://golden-hope.onrender.com/api/cart', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ productId: item.productId })
@@ -25,7 +25,7 @@ export default function Cart() {
 
   async function decreaseQty(item) {
     if (item.quantity === 1) return removeItem(item.id);
-    await fetch(`http://localhost:3000/api/cart/${item.id}`, {
+    await fetch(`https://golden-hope.onrender.com/api/cart/${item.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity: item.quantity - 1 })
@@ -34,7 +34,7 @@ export default function Cart() {
   }
 
   async function removeItem(id) {
-    await fetch(`http://localhost:3000/api/cart/${id}`, { method: 'DELETE' });
+    await fetch(`https://golden-hope.onrender.com/api/cart/${id}`, { method: 'DELETE' });
     fetchCart();
   }
 
