@@ -5,7 +5,7 @@ import PaymentSuccess from './pages/PaymentSuccess'
 import PaymentCancel from './pages/PaymentCancel'
 import ProductPage from './pages/ProductPage'
 import Cart from './pages/Cart'
-import Navbar from './components/Navbar'
+import Navbar from "./components/navbar"
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import './App.css'
