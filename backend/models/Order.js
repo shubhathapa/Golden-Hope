@@ -13,6 +13,7 @@ const orderSchema = new mongoose.Schema({
     type: String,
     default: "pending",
   },
+  timestamps: true, 
   createdAt: {
     type: Date,
     default: Date.now,
