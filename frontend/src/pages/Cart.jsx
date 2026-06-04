@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CartPage.css";
 
 export default function Cart() {
+  const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -72,7 +74,9 @@ export default function Cart() {
               <h2 className="cart-total">Total: ${totalPrice.toFixed(2)}</h2>
               <p className="cart-shipping">Shipping & taxes calculated at checkout</p>
             </div>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn" onClick={() => navigate('/checkout')}>
+             Proceed to Checkout
+          </button>
           </div>
         )}
       </div>
