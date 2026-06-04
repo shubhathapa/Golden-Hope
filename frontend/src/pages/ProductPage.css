@@ -1,0 +1,140 @@
+.pp-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  background-color: #faf8f5;
+  min-height: 100vh;
+}
+
+.pp-back {
+  background: none;
+  border: none;
+  color: #8B6914;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 32px;
+  padding: 0;
+  font-family: Georgia, serif;
+}
+
+.pp-back:hover { text-decoration: underline; }
+
+.pp-inner {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.pp-img-section { flex: 1; }
+
+.pp-main-img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.pp-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pp-rating { color: #8B7355; font-size: 1rem; }
+
+.pp-name {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3b2a1a;
+  line-height: 1.3;
+}
+
+.pp-price {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #8B6914;
+  font-family: Georgia, serif;
+}
+
+.pp-desc {
+  color: #6b7280;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.pp-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #5a4a2a;
+  font-size: 0.9rem;
+  border-top: 1px solid #e8dcc8;
+  border-bottom: 1px solid #e8dcc8;
+  padding: 16px 0;
+}
+
+.pp-qty-label {
+  font-weight: 600;
+  color: #3b2a1a;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pp-qty-select {
+  padding: 12px 16px;
+  border: 1px solid #d4b896;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  background: white;
+  color: #3b2a1a;
+  cursor: pointer;
+}
+
+.pp-cart-btn {
+  background-color: #c9a84c;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  font-family: Georgia, serif;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(201,168,76,0.3);
+}
+
+.pp-cart-btn:hover { background-color: #a67c2e; }
+
+.pp-loading {
+  text-align: center;
+  padding: 80px;
+  color: #8B6914;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+}
+
+.toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #8b6f47;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-family: Georgia, serif;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; top: 10px; }
+  to { opacity: 1; top: 24px; }
+}
