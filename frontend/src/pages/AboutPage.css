@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap');
+
+.about-page {
+  background-color: #faf8f5;
+  min-height: 100vh;
+}
+
+/* Hero */
+.about-hero {
+  background: linear-gradient(135deg, #f5f0e8 0%, #ede8dc 100%);
+  padding: 80px 24px;
+  text-align: center;
+  border-bottom: 1px solid #c9a84c;
+}
+
+.about-logo {
+  width: 150px;
+  margin-bottom: 12px;
+  margin-top: -80px;
+}
+
+.about-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #8B6914;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.about-hero-sub {
+  color: #a67c2e;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+}
+
+/* Cards */
+.about-section {
+  display: flex;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  flex: 1;
+  min-width: 280px;
+  background: white;
+  border: 1px solid #e8dcc8;
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.about-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.about-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #3b2a1a;
+  margin-bottom: 16px;
+}
+
+.about-card p {
+  font-family: 'Lato', sans-serif;
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* Impact */
+.about-impact {
+  background: #3b2a1a;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.about-impact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #c9a84c;
+  margin-bottom: 48px;
+  letter-spacing: 0.05em;
+}
+
+.about-impact-grid {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-impact-stat {
+  flex: 1;
+  min-width: 200px;
+}
+
+.about-impact-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #c9a84c;
+  margin-bottom: 12px;
+}
+
+.about-impact-label {
+  font-family: 'Lato', sans-serif;
+  color: #e8dcc8;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* Quote */
+.about-quote {
+  padding: 80px 24px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #5a3e20;
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 4px solid #c9a84c;
+  padding-left: 32px;
+  text-align: left;
+}

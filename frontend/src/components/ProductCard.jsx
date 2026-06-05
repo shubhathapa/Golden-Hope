@@ -1,13 +1,16 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
   const { id, name, description, price, imageUrl, rating } = product;
   const [toast, setToast] = useState(false);
+  const navigate = useNavigate();
 
-  async function handleAddToCart() {
+  async function handleAddToCart(e) {
+    e.stopPropagation(); // 防止点按钮也跳转
     try {
-      await fetch('http://localhost:3000/api/cart', {
+      await fetch('https://golden-hope.onrender.com/api/cart', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: id })
@@ -20,12 +23,8 @@ function ProductCard({ product }) {
   }
 
   return (
-    <div className="product-card">
-      {toast && (
-        <div className="toast">
-          ✦ Added to Cart!
-        </div>
-      )}
+    <div className="product-card" onClick={() => navigate(`/product/${id}`)}>
+      {toast && <div className="toast">✦ Added to Cart!</div>}
       <img src={imageUrl} alt={name} />
       <div className="product-info">
         <h3>{name}</h3>
