@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
 import './ProductsPage.css'
+import Navbar from '../components/navbar'
 
 function ProductsPage() {
   const [products, setProducts] = useState([])
@@ -10,6 +11,7 @@ function ProductsPage() {
     fetch('http://localhost:3000/api/products')
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         setProducts(data)
         setLoading(false)
       })
@@ -19,7 +21,14 @@ function ProductsPage() {
       })
   }, [])
 
-  if (loading) return <p>Loading...</p>
+  if (loading) {
+  return (
+    <>
+      <Navbar />
+      <p>Loading...</p>
+    </>
+  )
+}
 
   return (
     <div className="products-page">

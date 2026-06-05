@@ -1,10 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./Cart";
-import Product_Card from "../frontend/src/components/ProductCard";
-import Navbar from "../frontend/src/components/navbar";
+import ProductPage from "./ProductPage";
+import ProductFeed from "./ProductFeed";
 
 function App() {
-  return <Navbar />;
-  return <Cart />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ProductFeed />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

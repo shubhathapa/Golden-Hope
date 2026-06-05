@@ -22,7 +22,7 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      {/* Main bar */}
+      {/* ── Main bar ──────────────────────────────────────────────────── */}
       <div className="navbar-inner">
 
         {/* Logo */}
@@ -139,4 +139,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
