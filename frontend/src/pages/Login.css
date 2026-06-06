@@ -91,7 +91,9 @@
   text-decoration: none;
   font-weight: 600;
 }
-
+.login-input::placeholder {
+  color: #c4b49a;
+}
 .login-register a:hover {
   text-decoration: underline;
 }
