@@ -14,11 +14,19 @@ function Checkout() {
   return (
     <div className="checkout-page">
       <div className="checkout-container">
+<<<<<<< HEAD
         <button className="checkout-back" onClick={() => navigate('/cart')}>
           ← Back to Cart
         </button>
         <h1 className="checkout-title">✦ Checkout ✦</h1>
         <p className="checkout-sub">Complete your purchase securely</p>
+=======
+
+      <button className="checkout-back" onClick={() => navigate('/cart')}>
+        ← Back to Cart
+        </button>
+      <h1>Checkout</h1>
+>>>>>>> abd20cb (Updared cart and checkout pages)
 
       <PayPalScriptProvider
         options={{
@@ -30,6 +38,7 @@ function Checkout() {
           onSuccess={handleSuccess}
         />
       </PayPalScriptProvider>
+    </div>
     </div>
   );
 }
