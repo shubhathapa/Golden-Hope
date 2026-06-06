@@ -11,9 +11,9 @@ function Login() {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "https://golden-hope.onrender.com/api/auth/login",
+        "https://golden-hope.onrender.com/api/users/login",
         { email, password }
-      );
+        );
       localStorage.setItem("token", response.data.token);
       navigate("/");
     } catch (error) {
