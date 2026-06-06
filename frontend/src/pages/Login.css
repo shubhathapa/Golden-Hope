@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap');
+
+.login-page {
+  min-height: 100vh;
+  background-color: #faf8f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-container {
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  border: 1px solid #e8dcc8;
+  text-align: center;
+}
+
+.login-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #8B6914;
+  margin-bottom: 8px;
+}
+
+.login-sub {
+  color: #9ca3af;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-input {
+  padding: 14px 16px;
+  border: 1px solid #d4b896;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #3b2a1a;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-input:focus {
+  border-color: #c9a84c;
+}
+
+.login-btn {
+  background-color: #c9a84c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.login-btn:hover {
+  background-color: #a67c2e;
+}
+
+.login-register {
+  margin-top: 24px;
+  color: #9ca3af;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+}
+
+.login-register a {
+  color: #8B6914;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register a:hover {
+  text-decoration: underline;
+}

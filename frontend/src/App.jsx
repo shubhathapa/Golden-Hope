@@ -25,8 +25,7 @@ function App() {
         <Route path="/cart" element={<ProtectedRoute><Cart/></ProtectedRoute>} />
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/login" element={<h1>LOGIN PAGE</h1>} />
-
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   )
