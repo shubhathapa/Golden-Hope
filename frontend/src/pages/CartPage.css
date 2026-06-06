@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-page {
+  min-height: 100vh;
+  background-color: #f8f5f0;
+  padding: 32px;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding: 48px;
+}
+
+.cart-title {
+  font-size: 2.5rem;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  color: #8b6f47;
+  margin-bottom: 40px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 32px;
+}
+
+.cart-item-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.cart-item-subtitle {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.cart-item-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #8b6f47;
+  margin-top: 16px;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.qty-btn-minus {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #e5e7eb;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.qty-btn-minus:hover {
+  background: #d1d5db;
+}
+
+.qty-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.qty-btn-plus {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #8b6f47;
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.qty-btn-plus:hover {
+  opacity: 0.9;
+}
+
+.remove-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.remove-btn:hover {
+  background: #dc2626;
+}
+
+.cart-summary {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-total {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #8b6f47;
+}
+
+.cart-shipping {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.checkout-btn {
+  background: #8b6f47;
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.checkout-btn:hover {
+  background: #735c3a;
+}
