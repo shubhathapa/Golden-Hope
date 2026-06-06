@@ -10,7 +10,7 @@ function ProductCard({ product }) {
   async function handleAddToCart(e) {
     e.stopPropagation(); // 防止点按钮也跳转
     try {
-      await fetch('http://localhost:3000/api/cart', {
+      await fetch('https://golden-hope.onrender.com/api/cart', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: id })

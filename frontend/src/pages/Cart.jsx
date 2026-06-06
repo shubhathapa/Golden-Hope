@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CartPage.css";
 
 export default function Cart() {
+  const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -9,13 +11,13 @@ export default function Cart() {
   }, []);
 
   async function fetchCart() {
-    const res = await fetch('http://localhost:3000/api/cart');
+    const res = await fetch('https://golden-hope.onrender.com/api/cart');
     const data = await res.json();
     setCartItems(data);
   }
 
   async function increaseQty(item) {
-    await fetch('http://localhost:3000/api/cart', {
+    await fetch('https://golden-hope.onrender.com/api/cart', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ productId: item.productId })
@@ -25,7 +27,7 @@ export default function Cart() {
 
   async function decreaseQty(item) {
     if (item.quantity === 1) return removeItem(item.id);
-    await fetch(`http://localhost:3000/api/cart/${item.id}`, {
+    await fetch(`https://golden-hope.onrender.com/api/cart/${item.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity: item.quantity - 1 })
@@ -34,7 +36,7 @@ export default function Cart() {
   }
 
   async function removeItem(id) {
-    await fetch(`http://localhost:3000/api/cart/${id}`, { method: 'DELETE' });
+    await fetch(`https://golden-hope.onrender.com/api/cart/${id}`, { method: 'DELETE' });
     fetchCart();
   }
 
@@ -72,7 +74,9 @@ export default function Cart() {
               <h2 className="cart-total">Total: ${totalPrice.toFixed(2)}</h2>
               <p className="cart-shipping">Shipping & taxes calculated at checkout</p>
             </div>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn" onClick={() => navigate('/checkout')}>
+             Proceed to Checkout
+          </button>
           </div>
         )}
       </div>

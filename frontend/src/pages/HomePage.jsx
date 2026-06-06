@@ -8,7 +8,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products')
+    fetch('https://golden-hope.onrender.com/api/products')
       .then(res => res.json())
       .then(data => setFeatured(data.slice(0, 3)))
       .catch(err => console.error(err));

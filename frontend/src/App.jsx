@@ -5,9 +5,10 @@ import PaymentSuccess from './pages/PaymentSuccess'
 import PaymentCancel from './pages/PaymentCancel'
 import ProductPage from './pages/ProductPage'
 import Cart from './pages/Cart'
-import Navbar from './components/Navbar'
+import Navbar from "./components/navbar"
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 function App() {
@@ -17,12 +18,13 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="/checkout" element={<Checkout />} />
         <Route path="/success" element={<PaymentSuccess />} />
         <Route path="/cancel" element={<PaymentCancel />} />
         <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<ProductedRoute><Cart/></ProductedRoute>} />
+        <Route path="/checkout" element={<ProductedRoute><Checkout /></ProductedRoute>} />
         <Route path="/about" element={<AboutPage />} />
+
       </Routes>
     </>
   )

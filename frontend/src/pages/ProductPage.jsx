@@ -10,7 +10,7 @@ function ProductPage() {
   const [toast, setToast] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/products/${id}`)
+    fetch(`https://golden-hope.onrender.com/api/products/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data))
       .catch(err => console.error(err));
@@ -18,7 +18,7 @@ function ProductPage() {
 
   async function handleAddToCart() {
     for (let i = 0; i < quantity; i++) {
-      await fetch('http://localhost:3000/api/cart', {
+      await fetch('https://golden-hope.onrender.com/api/cart', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: Number(id) })
