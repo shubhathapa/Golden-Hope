@@ -9,6 +9,7 @@ import Navbar from "./components/navbar"
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import './App.css'
+import Login from "./pages/Login";    //m
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/" element={<h1>HOME PAGE</h1>} />
+        <Route path="/login" element={<h1>LOGIN PAGE</h1>} />
       </Routes>
     </>
   )
