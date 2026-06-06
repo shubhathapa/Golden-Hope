@@ -91,6 +91,9 @@
   text-decoration: none;
   font-weight: 600;
 }
+.login-input {
+  color: #c4b49a;
+}
 .login-input::placeholder {
   color: #c4b49a;
 }
