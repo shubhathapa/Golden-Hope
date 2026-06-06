@@ -11,6 +11,8 @@ app.use(cors({
 app.use(express.json())
 
 const cartRoutes = require('./routes/cart') 
+const userRoutes = require('./routes/users')
+app.use('/api/users', userRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/cart', cartRoutes)  
 
