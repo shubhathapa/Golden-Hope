@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
 import './ProductsPage.css'
-import { Link } from 'react-router-dom'
-import Navbar from '../components/navbar'
 
 function ProductsPage() {
   const [products, setProducts] = useState([])
@@ -12,7 +10,6 @@ function ProductsPage() {
     fetch('https://golden-hope.onrender.com/api/products')
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setProducts(data)
         setLoading(false)
       })
@@ -22,25 +19,12 @@ function ProductsPage() {
       })
   }, [])
 
-  if (loading) {
-  return (
-    <>
-      <Navbar />
-      <p>Loading...</p>
-    </>
-  )
-}
+  if (loading) return <p>Loading...</p>
 
   return (
     <div className="products-page">
       <h1 className="store-title">✦ GOLDEN HOPE ✦</h1>
       <div className="products-grid">
-
-
-        <Link to="/checkout">
-        <button>Go To Checkout</button>
-        </Link>
-
         {products.map(p => (
           <ProductCard key={p.id} product={p} />
         ))}

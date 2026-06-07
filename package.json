@@ -11,6 +11,12 @@
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^9.2.0",
+    "axios": "^1.17.0",
+<<<<<<< HEAD
+    "bcryptjs": "^3.0.3",
+    "jsonwebtoken": "^9.0.3",
+=======
+>>>>>>> 9eb95fe79dcee717c21b79e6c016f9cb1e0a3f65
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.16.0"

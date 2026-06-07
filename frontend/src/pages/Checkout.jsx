@@ -1,17 +1,4 @@
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
-import { useNavigate } from "react-router-dom";
-import PayPalButton from "../components/PayPalButton";
-import "./Checkout.css";
-
-function Checkout() {
-  const navigate = useNavigate();
-
-  const handleSuccess = (details) => {
-    console.log("Payment completed:", details);
-    navigate("/success");
-  };
-
-  return (
+return (
     <div className="checkout-page">
       <div className="checkout-container">
         <button className="checkout-back" onClick={() => navigate('/cart')}>
@@ -20,14 +7,18 @@ function Checkout() {
         <h1 className="checkout-title">✦ Checkout ✦</h1>
         <p className="checkout-sub">Complete your purchase securely</p>
 
-        <div className="checkout-paypal">
-          <PayPalScriptProvider options={{ clientId: "AQ-hnxECuXl7_smsE3wMqOTRLi45r57okLnHwUF8tIK5Uj5txZ3_AaBkm3SUROmHaxAHQ8mFL3f2hvzX" }}>
-            <PayPalButton amount={100} onSuccess={handleSuccess} />
-          </PayPalScriptProvider>
-        </div>
-      </div>
-    </div>
-  );
-}
+        <PayPalScriptProvider
+          options={{
+            "client-id": "AQ-hnxECuXl7_smsE3wMqOTRLi45r57okLnHwUF8tIK5Uj5txZ3_AaBkm3SUROmHaxAHQ8mFL3f2hvzX",
+          }}
+        >
+          <PayPalButton
+            amount={100}
+            onSuccess={handleSuccess}
+          />
+        </PayPalScriptProvider>
+      </div>  {/* closes checkout-container */}
+    </div>   {/* closes checkout-page */}
 
-export default Checkout;
+  
+  );
