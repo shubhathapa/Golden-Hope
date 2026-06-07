@@ -19,4 +19,6 @@ return (
         </PayPalScriptProvider>
       </div>  {/* closes checkout-container */}
     </div>   {/* closes checkout-page */}
+
+  
   );

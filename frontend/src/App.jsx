@@ -27,6 +27,8 @@ function App() {
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<ContactPage />} />
+        
       </Routes>
     </>
   )
