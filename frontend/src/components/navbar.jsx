@@ -4,8 +4,8 @@ import "./navbar.css"
 const NAV_LINKS = [
   { label: "Home",       href: "/" },
   { label: "Shop",       href: "/products" },
-  { label: "Categories", href: "/categories" },
   { label: "About",      href: "/about" },
+  { label: "Contact", href: "/contact" },   //m
 ];
 
 const CART_COUNT = 0;
@@ -14,10 +14,13 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
 
+  const token = localStorage.getItem("token"); //m
+
   function handleLogout() {
-    console.log("Logged out");
-    setUserOpen(false);
-  }
+  localStorage.removeItem("token");
+  setUserOpen(false);
+  window.location.href = "/";
+}   //m
 
   return (
     <nav className="navbar">
@@ -80,21 +83,59 @@ function Navbar() {
             </button>
 
             {userOpen && (
+              // <div className="navbar-dropdown">
+              //   {[
+              //     { label: "My Profile", href: "/profile" },
+              //     { label: "My Orders",  href: "/orders" },
+              //     { label: "Settings",   href: "/settings" },
+              //   ].map((item) => (
+              //     <a key={item.label} href={item.href} className="navbar-dropdown-item">
+              //       {item.label}
+              //     </a>
+              //   ))}
+              //   <div className="navbar-dropdown-divider" />
+              //   <button onClick={handleLogout} className="navbar-dropdown-logout">
+              //     Log out
+              //   </button>
+              // </div>
+
               <div className="navbar-dropdown">
-                {[
-                  { label: "My Profile", href: "/profile" },
-                  { label: "My Orders",  href: "/orders" },
-                  { label: "Settings",   href: "/settings" },
-                ].map((item) => (
-                  <a key={item.label} href={item.href} className="navbar-dropdown-item">
-                    {item.label}
-                  </a>
-                ))}
-                <div className="navbar-dropdown-divider" />
-                <button onClick={handleLogout} className="navbar-dropdown-logout">
-                  Log out
-                </button>
-              </div>
+
+                  {!token ? (
+                    <a
+                      href="/login"
+                      className="navbar-dropdown-item"
+                    >
+                      Login
+                    </a>
+                  ) : (
+                    <>
+                      <a
+                        href="/profile"
+                        className="navbar-dropdown-item"
+                      >
+                        My Profile
+                      </a>
+
+                      <a
+                        href="/orders"
+                        className="navbar-dropdown-item"
+                      >
+                        My Orders
+                      </a>
+
+                      <div className="navbar-dropdown-divider" />
+
+                      <button
+                        onClick={handleLogout}
+                        className="navbar-dropdown-logout"
+                      >
+                        Logout
+                      </button>
+                    </>
+                  )}
+
+                </div>
             )}
           </div>
 
