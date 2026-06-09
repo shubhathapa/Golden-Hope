@@ -21,6 +21,13 @@ function Navbar() {
     setIsLoggedIn(false);
     setUserOpen(false);
   }
+  const token = localStorage.getItem("token"); //m
+
+  function handleLogout() {
+  localStorage.removeItem("token");
+  setUserOpen(false);
+  window.location.href = "/";
+}   //m
 
   return (
     <nav className="navbar">
@@ -115,6 +122,22 @@ function Navbar() {
             </button>
 
             {userOpen && (
+              // <div className="navbar-dropdown">
+              //   {[
+              //     { label: "My Profile", href: "/profile" },
+              //     { label: "My Orders",  href: "/orders" },
+              //     { label: "Settings",   href: "/settings" },
+              //   ].map((item) => (
+              //     <a key={item.label} href={item.href} className="navbar-dropdown-item">
+              //       {item.label}
+              //     </a>
+              //   ))}
+              //   <div className="navbar-dropdown-divider" />
+              //   <button onClick={handleLogout} className="navbar-dropdown-logout">
+              //     Log out
+              //   </button>
+              // </div>
+
               <div className="navbar-dropdown">
 
                 {isLoggedIn ? (

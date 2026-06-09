@@ -10,6 +10,7 @@ export default function Cart() {
     fetchCart();
   }, []);
 
+  // Fetch cart items
   async function fetchCart() {
     const res = await fetch('https://golden-hope.onrender.com/api/cart');
     const data = await res.json();
@@ -25,6 +26,7 @@ export default function Cart() {
     fetchCart();
   }
 
+  // Decrease quantity
   async function decreaseQty(item) {
     if (item.quantity === 1) return removeItem(item.id);
     await fetch(`https://golden-hope.onrender.com/api/cart/${item.id}`, {
@@ -35,6 +37,7 @@ export default function Cart() {
     fetchCart();
   }
 
+  // Remove item
   async function removeItem(id) {
     await fetch(`https://golden-hope.onrender.com/api/cart/${id}`, { method: 'DELETE' });
     fetchCart();
@@ -58,6 +61,7 @@ export default function Cart() {
                 <p className="cart-item-subtitle">Luxury jewelry collection</p>
                 <p className="cart-item-price">${item.Product.price}</p>
               </div>
+
               <div className="cart-item-controls">
                 <button className="qty-btn-minus" onClick={() => decreaseQty(item)}>-</button>
                 <span className="qty-number">{item.quantity}</span>
