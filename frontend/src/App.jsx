@@ -9,9 +9,8 @@ import Navbar from "./components/navbar"
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ProtectedRoute from './components/ProtectedRoute'
-import Login from "./pages/Login";    //m
-import './App.css';
-import ContactPage from "./pages/ContactPage";  //m
+import Login from "./pages/Login"; 
+import './App.css'
 
 function App() {
   return (
@@ -27,8 +26,6 @@ function App() {
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/contact" element={<ContactPage />} />
-        
       </Routes>
     </>
   )
