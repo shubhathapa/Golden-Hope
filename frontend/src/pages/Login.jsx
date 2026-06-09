@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
@@ -9,24 +10,11 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch(
-        "https://golden-hope-1.onrender.com/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Login failed");
-      }
-
-      localStorage.setItem("token", data.token);
+      const response = await axios.post(
+        "https://golden-hope.onrender.com/api/users/login",
+        { email, password }
+        );
+      localStorage.setItem("token", response.data.token);
       navigate("/");
     } catch (error) {
       alert("Login failed");
@@ -36,7 +24,7 @@ function Login() {
   return (
     <div className="login-page">
       <div className="login-container">
-        
+        <img src="/golden_hope_logo.svg" alt="Golden Hope" className="login-logo" />
         <h1 className="login-title">✦ Welcome Back ✦</h1>
         <p className="login-sub">Sign in to your account</p>
 
