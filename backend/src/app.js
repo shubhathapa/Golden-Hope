@@ -6,11 +6,13 @@ const productRoutes = require('./routes/products')
 const app = express()
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://golden-hope-1.onrender.com']
+  origin: ['http://localhost:5173', 'https://golden-hope-1.onrender.co m']
 }))
 app.use(express.json())
 
 const cartRoutes = require('./routes/cart') 
+const userRoutes = require('./routes/users')
+app.use('/api/users', userRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/cart', cartRoutes)  
 
