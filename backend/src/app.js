@@ -6,7 +6,7 @@ const productRoutes = require('./routes/products')
 const app = express()
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://golden-hope-1.onrender.co m']
+  origin: ['http://localhost:5173', 'https://golden-hope-1.onrender.com']
 }))
 app.use(express.json())
 
