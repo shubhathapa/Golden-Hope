@@ -1,11 +1,11 @@
 import { useState } from "react";
-import "./navbar.css"
+import "./navbar.css";
 
 const NAV_LINKS = [
-  { label: "Home",       href: "/" },
-  { label: "Shop",       href: "/products" },
-  { label: "Categories", href: "/categories" },
-  { label: "About",      href: "/about" },
+  { label: "Home", href: "/" },
+  { label: "Shop", href: "/products" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact"},
 ];
 
 const CART_COUNT = 0;
@@ -14,15 +14,17 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
 
+  // Replace this with your real authentication logic later
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   function handleLogout() {
     console.log("Logged out");
+    setIsLoggedIn(false);
     setUserOpen(false);
   }
 
   return (
     <nav className="navbar">
-
-      {/* ── Main bar ──────────────────────────────────────────────────── */}
+      {/* Main bar */}
       <div className="navbar-inner">
 
         {/* Logo */}
@@ -46,22 +48,45 @@ function Navbar() {
 
           {/* Search */}
           <button className="navbar-icon-btn" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.8}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
+              />
             </svg>
           </button>
 
           {/* Cart */}
           <a href="/cart" className="navbar-icon-btn navbar-cart">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 0 0 6.54 17H17m-10 0a1 1 0 1 0 2 0m6 0a1 1 0 1 0 2 0" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.8}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 0 0 6.54 17H17m-10 0a1 1 0 1 0 2 0m6 0a1 1 0 1 0 2 0"
+              />
             </svg>
+
             {CART_COUNT > 0 && (
-              <span className="navbar-cart-badge">{CART_COUNT}</span>
+              <span className="navbar-cart-badge">
+                {CART_COUNT}
+              </span>
             )}
           </a>
 
@@ -72,28 +97,61 @@ function Navbar() {
               className="navbar-icon-btn"
               aria-label="Account"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round"
-                  d="M5.121 17.804A9 9 0 1 1 18.88 17.804M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5.121 17.804A9 9 0 1 1 18.88 17.804M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+                />
               </svg>
             </button>
 
             {userOpen && (
               <div className="navbar-dropdown">
-                {[
-                  { label: "My Profile", href: "/profile" },
-                  { label: "My Orders",  href: "/orders" },
-                  { label: "Settings",   href: "/settings" },
-                ].map((item) => (
-                  <a key={item.label} href={item.href} className="navbar-dropdown-item">
-                    {item.label}
-                  </a>
-                ))}
-                <div className="navbar-dropdown-divider" />
-                <button onClick={handleLogout} className="navbar-dropdown-logout">
-                  Log out
-                </button>
+
+                {isLoggedIn ? (
+                  <>
+                    <a href="/profile" className="navbar-dropdown-item">
+                      My Profile
+                    </a>
+
+                    <a href="/orders" className="navbar-dropdown-item">
+                      My Orders
+                    </a>
+
+                    <a href="/settings" className="navbar-dropdown-item">
+                      Settings
+                    </a>
+
+                    <div className="navbar-dropdown-divider" />
+
+                    <button
+                      onClick={handleLogout}
+                      className="navbar-dropdown-logout"
+                    >
+                      Log out
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <a href="/login" className="navbar-dropdown-item">
+                      Login
+                    </a>
+
+                    <a href="/register" className="navbar-dropdown-item">
+                      Register
+                    </a>
+                  </>
+                )}
+
               </div>
             )}
           </div>
@@ -104,19 +162,35 @@ function Navbar() {
             className="navbar-icon-btn navbar-hamburger"
             aria-label="Toggle menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              {menuOpen
-                ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              }
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.8}
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
             </svg>
           </button>
 
         </div>
       </div>
 
-      {/* Gold divider */}
+      {/* Divider */}
       <div className="navbar-divider" />
 
       {/* Mobile menu */}
@@ -134,7 +208,6 @@ function Navbar() {
           ))}
         </div>
       )}
-
     </nav>
   );
 }

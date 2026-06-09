@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap');
+ 
+.register-page {
+  min-height: 100vh;
+  background-color: #f5f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  font-family: 'Lato', sans-serif;
+}
+ 
+.register-card {
+  background-color: #fff;
+  border: 1px solid #e8e0cc;
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.07);
+}
+ 
+/* ── Header ── */
+.register-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+ 
+.register-diamonds {
+  color: #c9a84c;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+ 
+.register-title {
+  font-family: 'Playfair Display', serif;
+  color: #2d4a2d;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+ 
+.register-subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+ 
+/* ── Alerts ── */
+.register-alert {
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+ 
+.register-alert--success {
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #2d4a2d;
+  text-align: center;
+}
+ 
+.register-alert--error {
+  background-color: #fdecea;
+  border: 1px solid #f5c6c6;
+  color: #a05252;
+}
+ 
+/* ── Form ── */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+ 
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  color: #2d4a2d;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+ 
+.form-label--optional {
+  color: #aaa;
+  font-weight: 400;
+}
+ 
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  background-color: #faf8f4;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+ 
+.form-input:focus {
+  border-color: #c9a84c;
+}
+ 
+.form-textarea {
+  resize: vertical;
+}
+ 
+/* ── Submit button ── */
+.register-btn {
+  background-color: #c9a84c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+ 
+.register-btn:hover {
+  background-color: #b8973d;
+}
+ 
+.register-btn--loading {
+  background-color: #d4b96a;
+  cursor: not-allowed;
+}
+ 
+/* ── Login link ── */
+.register-login-link {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: #888;
+}
+ 
+.register-link {
+  color: #c9a84c;
+  text-decoration: none;
+  font-weight: 600;
+}
+ 
+.register-link:hover {
+  text-decoration: underline;
+}
+ 
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .register-card {
+    padding: 32px 24px;
+  }
+ 
+  .register-title {
+    font-size: 1.5rem;
+  }
+}

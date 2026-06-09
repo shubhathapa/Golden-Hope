@@ -147,6 +147,7 @@
 
 .navbar-dropdown-item:hover {
   background-color: var(--cream-dark);
+  border-radius: 8px;
 }
 
 .navbar-dropdown-divider {
